@@ -1,306 +1,197 @@
-@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Indie+Flower|Niconne|Permanent+Marker|Roboto');
-/*font-family: 'Indie Flower', cursive;
-font-family: 'Permanent Marker', cursive;
-font-family: 'Niconne', cursive;
-font-family: 'Fredericka the Great', cursive;
-font-family: 'Roboto', sans-serif;*/
-*{
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Kranky|Love+Ya+Like+A+Sister|Roboto+Condensed');
+/* font-family: 'Love Ya Like A Sister', cursive;
+font-family: 'Kranky', cursive;
+font-family: 'Dancing Script', cursive;
+font-family: 'Roboto Condensed', sans-serif; */
+/* *{
 	margin:0;
 	padding:0;
   box-sizing: content-box;
-}
+} */
 body{
   color: #222;
   font-family: 'Roboto', sans-serif;
 }
-/* Small devices (tablets, 768px and up) */
+.btn-yellow-round{
+  background-color: #febb32;
+  color: #fff;
+  font-weight:800;
+  display: inline-block;
+  padding: 8px 15px;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 50px;
+}
+.btn-upload-wrap{
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  z-index: 99;
+}
+.in, .modal-open{
+  padding-right: 0 !important;
+}
+.detail-button{
+  padding: 0 !important;
+}
+.modal-body{
+  padding: 0 !important;
+}
+.modal-body img{
+  width: 99.99%;
+}
+.bt-profile{
+  background-color: #febb32;
+  color: #fff;
+}
+.bt-profile:hover{
+  color: #fff !important;
+}
+
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.heading .media{
+  padding: 100px 0 30px 0;
+}
+.user-info h4{
+  margin-top: 10px;
+  font-weight: 800;
+}
+.circular--landscape {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 25%;
+  overflow: hidden;
+	border-radius: 50%;
+}
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+.user-info ul{
+  padding-left: 0;
+  border: 1px solid #dedede;
+  border-radius: 15px;
+}
+.user-info ul li{
+  display: inline-block;
+  padding: 5px 25px;
+}
+.user-info li p{
+  margin-bottom: 0;
+}
+
+footer .copyright{
+
+}
+
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif; }
+
+/* ---- grid ---- */
+
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.3333%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+.uno{
+  left: 0% !important;
+}
+.duo{
+  left: 33.29% !important;
+} 
+.tress{
+  top:0 !important;
+  left: 66.6% !important;
+}
+
+
+.grid-sizer,
+  .grid-item {
+    width: 33.3333%;
+  }
+  
+  .grid-item {
+    float: left;
+  }
+  
+  .grid-item img {
+    display: block;
+    max-width: 100%;
+  }
+
+
+
 @media (min-width: 768px) {
-	/*header*/
-	header{
-	  background-color: #fff;
-	}
-	.head-wrap{
-	  padding: 8% 15px 0 15px;
-	}
-	.logo{
-	  text-align: center;
-	  position: relative;
-	  font-size: 16px;
-	}
-	.logo h1{
-	  font-family: 'Fredericka the Great', cursive;
-	  font-size: 3.5em;
-	}
-	.button-cart{
-	  text-align: center;
-	}
-	.button-cart ul{
-	  padding-left: 0;
-	}
-	.button-cart li{
-	  list-style: none;
-	  display: inline-block;
-	}
-	.button-cart a{
-	  background-color: #c9dfdc;
-	  padding: 8px 15px;
-	  font-size: 14px;
-	  color: #222;
-	}
-	.button-cart a:hover{
-		color: #222;
-		background-color: #fedcd2;
-	  /* background-color: rgba(246,199,183, 0.8); */
-	  text-decoration: none;
-	}
-	.menu-bar{
-	  background-color: #f6f6f6;
-	  display: flex;
-	  margin: 3% 5% 0 5%;
-	  padding: 15px 10px;
-	  justify-content: space-around;
-	}
-	.menu-bar ul{
-	  margin-bottom: 0;
-	}
-	.menu-bar li{
-	  display: inline-block;
-	  padding: 8px 15px;
-	}
-	.menu-bar li:last-child:hover{
-		border: 0;
-		padding: 8px 15px;
-	}
-	.menu-bar li a{
-		color: #F99A9A;
-	}
-	.menu-bar li a:hover{
-		text-decoration: none;
-	}
-	.menu-bar li:hover{
-		padding: 10px 13px;
-		border: 2px solid #F99A9A ;
-	}
-	.search-wrap{
-		position: relative;
-		border: 0;
-		padding: 0;
-	}
-	.search-wrap .fa{
-	  position: absolute;
-	  top: 38%;
-	  right: 10%;
-	}
-
-	/*content*/
-	.carousel-wrap{
-		padding: 0 5%;
-	}
-	.carousel-inner .item .iimg{
-		object-fit: cover;
-	   width: 100%;
-	   height: 450px;
-	}
-	.content-news{
-	  padding: 0 5%;
-	}
-	.content-news h3{
-	  font-size: 20px;
-	  font-weight: bold;
-	  padding-left: 15px;
-	}
-	.wrap-slider .item-news img{
-	  width: 100%;
-	  height: 200px;
-	}
-	.item-news{
-	  display: block;
-	  line-height: 1.42857143;
-	  margin-bottom: 20px;
-	}
-	.item-news .img-content{
-	  border-bottom: 1px solid #ddd;
-	  background-repeat: no-repeat;
-	  background-position: 50% 50%;
-	  background-size: cover !important;
-	  transition: opacity 0.2s;
-	  height: 250px;
-	  width: 100%;
-	}
-	.item-content{
-	  background-color: #f6f6f6;
-	  text-align: center;
-	  padding: 10px;
-	}
-	.item-content .price{
-	  color: #b23;
-	  font-size: 16px;
-	  font-weight: bold;
-	}
-	.item-content .name-product{
-	  margin-bottom: 0;
-	}
-	.item-content small{
-	  font-style: italic;
-	  color: #adadad;
-	}
-	/*brand*/
-	.brand-content{
-	  padding: 0 5% 5% 5%;
-	}
-	.brand-content h3{
-	  font-size: 20px;
-	  font-weight: bold;
-	  padding-left: 15px;
-	}
-	.branded{
-	  display: block;
-	}
-	.branded .poster{
-	  background-image: url('/assets/images/header1.jpg');
-	  border-bottom: 1px solid #ddd;
-	  background-repeat: no-repeat;
-	  background-position: 50% 50%;
-	  background-size: cover !important;
-	  transition: opacity 0.2s;
-	  height: 210px;
-	  width: 100%;
-	}
-	.brand-item{
-	  padding: 0 !important;
-		height: 210px;
-	  display: flex;
-	  flex-wrap: wrap;
-	  align-content: space-between;
-	}
-	.brand-item ul{
-	  padding-left: 0;
-	  margin-bottom: 0;
-	}
-	.brand-item li{
-		list-style: none;
-	}
-	/*table banner*/
-	.container-table {
-	  display: table;
-	  table-layout: fixed;
-	  width: 100%;
-	  margin-bottom: 15px;
-	}
-	.container-table .col-table {
-		text-align: center;
-	  display: table-cell;
-	  vertical-align: middle;
-	  padding: 0 1rem;
-	}
-	.banner-wrap{
-		background-color: #f6f6f6;
-		padding: 18px 10px;
-	}
-	.brand-item li img{
-	  width: 100%;
-	}
-	/*list categori*/
-	.list-categories{
-	  padding: 0 5%;
-	  border-top: 2px solid #f6f6f6;
-	}
-	.list-categories h3{
-	  font-size: 20px;
-	  font-weight: bold;
-	}
-	.sidebar-category{
-	  background-color: #f6f6f6;
-	  height: 450px;
-	  position: fixed;
-	  overflow-y: scroll;
-	}
-	.sidebar-category ul{
-	  margin-bottom: 0;
-	  margin-top: 20px;
-	}
-	.sidebar-category li{
-	  list-style: none;
-	  padding: 8px 10px;
-	}
-	.sidebar-category li a:hover{
-	  text-decoration: none;
-	  color: #e7a;
-	}
-	.content-category{
-	  flex-wrap: wrap;
-	  position: fixed;
-	  height: 450px;
-	  overflow-y: scroll;
-	}
-	.pagination-items{
-	  text-align: center;
-	}
-	footer{
-	  background-color: #f8f8f8;
-	  padding: 5% 5% 3% 5%;
-	  margin-top: 5%;
-	}
-	footer .logo{
-	  text-align: left;
-	}
-	.menu-bottom{
-	  padding-top: 5%;
-	}
-	.menu-bottom ul li{
-	  list-style: none;
-	  padding: 8px 0;
-	}
-	.menu-bottom ul li a{
-	  font-size: 14px;
-	}
-	.menu-bottom ul li a:hover{
-	  text-decoration: none;
-	}
-	.social-media-button{
-	  padding-top: 5%;
-	}
-	.social-media-button li{
-	  list-style: none;
-	  display: inline-block;
-	  padding: 5px 10px;
-	}
-	.social-media-button li a{
-	  color: #000;
-	}
-	.social-media-button li a:hover{
-		color: #e7a;
-	}
-	.social-media-button li i{
-	  font-size: 30px;
-	}
-	.subs{
-	  position: relative;
-	}
-	.btn-subs{
-	  position: absolute;
-	  top: 0;
-	  right: 0;
-	}
-	.payment{
-	  margin-bottom: 20px;
-	}
-
+	
 }
 
-/* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .logo{
-    position: relative;
-  }
-  .button-cart{
-    position: absolute;
-    top: 0;
-    right: 8%;
-  }
+  
 }
 
-/* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+  /* .grid-sizer,
+  .grid-item {
+    width: 33.3333%;
+  }
+  
+  .grid-item {
+    float: left;
+  }
+  
+  .grid-item img {
+    display: block;
+    max-width: 100%;
+  } */
 }
