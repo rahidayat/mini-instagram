@@ -18,6 +18,23 @@
 <body>
 
   <div id="app">
+    <div class="btn-upload-wrap">
+      <button class="btn-yellow-round" data-toggle="modal" data-target=".bs-example-modal-sm">
+        +</button>
+    </div>
+    <!-- modal here -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+          <div class="upload-btn-wrapper" >
+            <input type="file" name="myfile" accept="image/*"/>
+            <input type="text" class="form-control" placeholder="Add you caption here.....">
+            <input type="text" class="form-control" placeholder="add tag,">
+            <button class="btn">Upload a file</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <header class="container-fluid head">
       <div class="row heading">
         <!-- <nav>
@@ -28,30 +45,63 @@
             <img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg" />
           </div>
           <div class="user-info">
-            <h4 class="media-heading">Username Instampgram lalalallalal</h4>
-            <button class="btn btn-sm">Logout</button>
+            <h4 class="media-heading">Username Instampgram</h4>
+            <ul>
+              <li>7 <p>Post</p></li>
+              <li>120 <p>Followers</p></li>
+            </ul>
+            <button class="btn btn-sm bt-profile">Follow</button>
           </div>
         </div>
       </div>
     </header>
   
-    <section class="container-fluid">
+    <section class="container-fluid grid">
       <div class="row content-wrap">
-        <!-- <div class="col-xs-6 col-md-3">
-          <a href="#" class="thumbnail">
-            <img src="http://dreamatico.com/data_images/kitten/kitten-3.jpg" alt="...">
-          </a>
+        <div class="grid">
+          <div class="grid-sizer"></div>
+          <div class="grid-item uno">
+            <a href="" class="detail-button" >
+            data-toggle="modal" data-target=".bs-example-modal-lg">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+            </a>
+          </div>
+          <div class="grid-item duo">
+            <a href="" class="detail-button" >
+              data-toggle="modal" data-target=".bs-example-modal-lg">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+            </a>
+          </div>
+          <div class="grid-item tress">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+          </div>
+          <div class="grid-item">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+          </div>
         </div>
-        <div class="col-xs-6 col-md-3">
-          <a href="#" class="thumbnail">
-            <img src="https://assets3.thrillist.com/v1/image/2563373/size/tmg-article_tall;jpeg_quality=20.jpg" alt="...">
-          </a>
-        </div> -->
-        
-        
       </div>
-      <div class="row btn-upload-wrap">
-        <button class="btn-yellow-round">+</button>
+
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" >
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Share</button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   
@@ -66,10 +116,36 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/script.js"></script>
 <script src="/assets/js/vue-app.js"></script>
 <script src="/assets/js/components/test.js"></script>
+<script>
+  // init Masonry
+  var $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    columnWidth: '.grid-sizer'
+  });
+  // layout Masonry after each image loads
+  $grid.imagesLoaded().progress( function() {
+    $grid.masonry();
+  });  
+
+  // var grid = document.querySelector('.grid');
+
+  // var msnry = new Masonry( grid, {
+  //   itemSelector: '.grid-item',
+  //   columnWidth: '.grid-sizer',
+  //   percentPosition: true
+  // });
+
+  // imagesLoaded( grid ).on( 'progress', function() {
+  //   // layout Masonry after each image loads
+  //   msnry.layout();
+  // });
+
+</script>
 </body>
 </html>
