@@ -3,6 +3,16 @@ const router =  express.Router()
 const images = require('../helpers/storage')
 const storcont = require('../controllers/storage')
 const db = require('../models/storage')
+const Storage = require('@google-cloud/storage')
+const projectId = process.env.PROJ_ID
+require('dotenv').config()
+const bucketName = process.env.BUCK_NAME
+const mongoose = require('mongoose')
+const storage = Storage({
+  projectId:process.env.PROJ_ID,
+  keyFilename:process.env.KEY_FILE
+})
+const bucket = storage.bucket(process.env.BUCK_NAME)
 
 // const option = {
 //   action: 'read',
@@ -67,4 +77,27 @@ router.get('/',(req,res)=>{
   })
 })
 
+router.delete('/delete/:id',(req,res)=>{
+  storage
+  .bucket(process.env.BUCK_NAME)
+  .file(req.body.filename)
+  .delete()
+  .then(()=>{
+    db.remove({_id:req.params.id},function(err){
+      res.send('masuk ke then')
+    })
+  }).catch(err=>{
+    res.send(err)
+  })
+})
+
+// router.delete('/delete/:id',(req,res)=>{
+//   db.remove({_id:req.params.id},function(err){
+//     if(!err){
+//       res.send('deleted')
+//     }else{
+//       res.send(err)
+//     }
+//   })
+// })
 module.exports = router;

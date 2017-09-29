@@ -6,7 +6,7 @@ const simpan = Storage()
 
 const logger = require('morgan');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/db');
+mongoose.connect('mongodb://dimasgardenia:dimas1990@rest-api-shard-00-00-fmugy.mongodb.net:27017,rest-api-shard-00-01-fmugy.mongodb.net:27017,rest-api-shard-00-02-fmugy.mongodb.net:27017/test?ssl=true&replicaSet=Rest-API-shard-0&authSource=admin');
 
 const stor = require('./router/storage')
 
