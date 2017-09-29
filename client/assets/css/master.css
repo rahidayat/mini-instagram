@@ -196,13 +196,7 @@ footer .copyright{
 * { box-sizing: border-box; }
 
 /* force scrollbar */
-html { overflow-y: scroll; }
-
-body { font-family: sans-serif; }
-
 /* ---- grid ---- */
-
-
 /* clear fix */
 .grid:after {
   content: '';
@@ -236,21 +230,73 @@ body { font-family: sans-serif; }
   top:0 !important;
   left: 66.6% !important;
 }
-
-
 .grid-sizer,
-  .grid-item {
-    width: 33.3333%;
-  }
-  
-  .grid-item {
-    float: left;
-  }
-  
-  .grid-item img {
-    display: block;
-    max-width: 100%;
-  }
+.grid-item {
+  width: 33.3333%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+}
+
+/* swap css */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 300px;
+  height: 400px;
+  background: #262626;
+  overflow: hidden;
+}
+.card .imgBx,
+.card .details {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  transition: .5s;
+}
+.card .imgBx {
+  top: 0;
+  left: 0;
+}
+.card:hover .imgBx {
+  top: 0;
+  left: -100%;
+}
+.card .imgBx img {
+  width: 100%;
+}
+.card .details {
+  background: #262626;
+  top: 0;
+  left: 100%;
+  padding: 60px 30px;
+}
+.card:hover .details {
+  top: 0;
+  left: 0%;
+}
+.card .details h2 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0 0 10px;
+  border-bottom: 2px solid #fff;
+
+}
+.card .details p {
+  margin: 20px 0 0;
+  color: #fff;
+}
+
 
 
 
