@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const Storage = require('@google-cloud/storage')
+const simpan = Storage()
 
 const logger = require('morgan');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://admin:123@cluster0-shard-00-00-jgxqq.mongodb.net:27017,cluster0-shard-00-01-jgxqq.mongodb.net:27017,cluster0-shard-00-02-jgxqq.mongodb.net:27017/mininsta?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin');
+mongoose.connect('mongodb://localhost:27017/db');
 
+const stor = require('./router/storage')
 
 var app = express();
 
@@ -14,6 +17,7 @@ app.use(cors())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use('/',stor)
 
 
 app.listen(process.env.PORT || 3000, () => {
