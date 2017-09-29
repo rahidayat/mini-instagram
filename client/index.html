@@ -27,19 +27,34 @@
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <div class="upload-btn-wrapper" >
-            <input type="file" name="myfile" accept="image/*"/>
-            <input type="text" class="form-control" placeholder="Add you caption here.....">
-            <input type="text" class="form-control" placeholder="add tag,">
-            <button class="btn">Upload a file</button>
+            <div class="box-upload">
+              <form action="">
+                <input type="file" name="file" id="file" 
+                class="inputfile" data-multiple-caption="{count} files selected" multiple 
+                accept="image/*" />
+                <label for="file">Choose a file</label>
+                <!-- <input class="file-here" type="file" name="myfile" accept="image/*"/> -->
+              </div>
+              <label for="cation">Write this caption photo</label>
+              <input type="text" name="caption" class="form-control" placeholder="Add you caption here.....">
+              <label for="tag">Tag here</label>
+              <input type="text" name="tag" class="form-control" placeholder="add tag,">
+              <button class="btn">Upload a file</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
     <header class="container-fluid head">
+      <div class="row nav-bar">
+        <div class="col-md-10 left">
+          <h2>Instampgram</h2>
+        </div>
+        <div class="col-md-2 right">
+          <button class="btn">Login</button>
+        </div>
+      </div>
       <div class="row heading">
-        <!-- <nav>
-          <p>< all timeline</p>
-        </nav> -->
         <div class="media">
           <div class="circular--landscape">
             <img src="http://placekitten.com.s3.amazonaws.com/homepage-samples/408/287.jpg" />
@@ -61,17 +76,17 @@
         <div class="grid">
           <div class="grid-sizer"></div>
           <div class="grid-item uno">
-            <a href="" class="detail-button" >
+            <a href="" class="detail-button"
             data-toggle="modal" data-target=".bs-example-modal-lg">
               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
             </a>
           </div>
           <div class="grid-item duo">
-            <a href="" class="detail-button" >
+            <a href="" class="detail-button"
               data-toggle="modal" data-target=".bs-example-modal-lg">
               <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
             </a>
-          </div>
+          </div>c
           <div class="grid-item tress">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
           </div>
@@ -132,20 +147,7 @@
   $grid.imagesLoaded().progress( function() {
     $grid.masonry();
   });  
-
-  // var grid = document.querySelector('.grid');
-
-  // var msnry = new Masonry( grid, {
-  //   itemSelector: '.grid-item',
-  //   columnWidth: '.grid-sizer',
-  //   percentPosition: true
-  // });
-
-  // imagesLoaded( grid ).on( 'progress', function() {
-  //   // layout Masonry after each image loads
-  //   msnry.layout();
-  // });
-
+</script>
 </script>
 </body>
 </html>
