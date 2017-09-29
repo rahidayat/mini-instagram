@@ -67,4 +67,18 @@ router.get('/',(req,res)=>{
   })
 })
 
+router.delete('/delete/:id',(req,res)=>{
+  storage
+  .bucket(process.env.BUCK_NAME)
+  .file(req.body.filename)
+  .delete()
+  .then(()=>{
+    db.remove({_id:req.params.id},function(err){
+      res.send('masuk ke then')
+    })
+  }).catch(err=>{
+    res.send(err)
+  })
+})
+
 module.exports = router;
