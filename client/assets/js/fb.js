@@ -96,6 +96,7 @@ function statusChangeCallback(response) {
       .then(response => {
         console.log('ini data response', response);
         localStorage.setItem('token', response.data.token)
+        localStorage.setItem('name', response.data.name)
         if(window.location.href !== 'http://localhost:8080/main.html' ) {
           window.location.href = 'main.html'
         }

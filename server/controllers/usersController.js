@@ -26,7 +26,7 @@ var auth = (req, res) => {
           console.log(userBaru)
           var token = jwt.sign(userBaru, process.env.JWT_SECRET)
           console.log('ini isinya token', token);
-          res.send({token: token})
+          res.send({token: token}, {name: data.name})
         })
         .catch(err =>{
           res.send(err)
@@ -40,9 +40,10 @@ var auth = (req, res) => {
           name: result.name
         }
         // console.log('secret nya ', process.env.JWT_SECRET)
+        var name = result.name
         var token = jwt.sign(userLama, process.env.JWT_SECRET)
         console.log('ini isinya token', token);
-        res.send({token: token})
+        res.send({token, name})
       }
     })
   })

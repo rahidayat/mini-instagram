@@ -24,8 +24,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const user = require('./routes/usersRouter')
+const img = require('./routes/imagesRouter')
 
 app.use('/', user)
+app.use('/images', img)
 
 
 app.listen(process.env.PORT || 3000, () => {

@@ -2,8 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var imageSchema = new Schema({
-  imgurl: String,
-  uploadBy: [{type: Schema.Types.ObjectId, ref: 'users'}]
+  url: String,
+  filename: String,
+  type: String
   },{
   timestamps: true
 });
