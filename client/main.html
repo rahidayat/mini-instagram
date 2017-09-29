@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>mini-insta</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+      <script src='https://code.jquery.com/jquery-3.2.1.js'> </script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- <script type="text/javascript" src="/assets/js/fb.js"></script> -->
+      <div class="container">
+        <button class="btn btn-danger" id="button" type="button" onclick="logout()">Logout</button>
+      </div>
+
+    <script>
+      // $(document).ready(()=>{
+      //  if (localStorage.getItem('token') || localStorage.getItem('fbtoken')) {
+      //
+      //  } else {
+      //    window.location.href='index.html'
+      //  }
+      // })
+    </script>
+
+    <script>
+      function logout() {
+        localStorage.clear();
+        window.location.href='index.html';
+        // FB.logout(function(response) {
+        //
+        // });
+      }
+    </script>
+  </body>
+</html>

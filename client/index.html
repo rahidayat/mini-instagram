@@ -3,8 +3,41 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script type="text/javascript" src="/assets/js/fb.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
 
+    <fb:login-button size="xlarge" scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div id="status">
+    </div>
+
+    <!-- share di facebook -->
+    <div class="page-header">
+      <h1>Share Dialog</h1>
+    </div>
+
+    <p>Click the button below to trigger a Share Dialog</p>
+
+    <button id="shareBtn" class="btn btn-success clearfix">Share</button>
+
+
+    <script>
+      document.getElementById('shareBtn').onclick = function() {
+        FB.ui({
+          method: 'share',
+          display: 'popup',
+          href: 'https://developers.facebook.com/docs/',
+        }, function(response){});
+      }
+    </script>
   </body>
 </html>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
